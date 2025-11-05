@@ -1,0 +1,92 @@
+{
+  "brand": "作品集",
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "contact": "联系"
+  },
+  "home": {
+    "hero_title": "你好，我是 {{name}}",
+    "view_work": "查看我的作品",
+    "download_resume": "下载简历",
+    "about_me": "关于我",
+    "my_journey": "我的旅程",
+    "skills": {
+      "frontend": "前端开发",
+      "uiux": "界面/用户体验设计",
+      "backend": "后端集成"
+    },
+    "typing": ["全栈开发工程师", "问题解决者"],
+    "intro": "我使用现代技术构建美观、响应式的网页应用。热爱干净的代码、优秀的用户体验，并将创意变为数字现实。"
+  },
+  "projects": {
+    "title": "我的项目",
+    "subtitle": "探索我的最新作品，看看我如何通过代码与设计将想法变为现实。",
+    "search_placeholder": "搜索项目...",
+    "filter_all": "全部",
+    "results_count": "显示 {{count}} / 共 {{total}} 个项目",
+    "no_results_title": "未找到项目",
+    "no_results_desc": "尝试调整搜索词或筛选条件。",
+    "view_details": "查看详情",
+    "cta_title": "有项目想法吗？",
+    "cta_desc": "让我们一起合作，把你的想法变为现实。我总是对新的挑战充满期待。",
+    "cta_button": "联系我",
+    "more_tech": "+{{count}} 个更多"
+  },
+  "project_details": {
+    "not_found_title": "未找到项目",
+    "not_found_desc": "你查找的项目不存在。",
+    "back_to_projects": "返回项目列表",
+    "live_demo": "在线演示",
+    "view_live": "查看线上站点",
+    "source_code": "源码",
+    "view_github": "在 GitHub 查看",
+    "gallery_title": "项目画廊",
+    "overview_title": "项目概述",
+    "key_features": "主要特性",
+    "feature_1": "现代、响应式的移动优先设计",
+    "feature_2": "优化的性能和用户体验",
+    "feature_3": "可扩展的架构与干净的代码实践",
+    "technologies_used": "使用的技术",
+    "information_title": "项目信息",
+    "duration": "周期",
+    "category": "类别"
+  },
+  "shared": {
+    "previous": "上一项",
+    "next": "下一项"
+  },
+  "contact": {
+    "hero_title": "让我们一起合作",
+    "hero_desc": "有项目想法吗？我很乐意倾听。给我发信息，一起讨论如何让你的想法落地。",
+    "title": "联系我",
+    "desc": "我始终期待与优秀的人合作，参与新的项目。无论你已有明确的需求，还是仅仅想聊聊想法，都欢迎联系我。",
+    "email": "邮箱",
+    "phone": "电话",
+    "location": "位置",
+    "follow": "关注我",
+    "form": {
+      "name": "姓名 *",
+      "email": "邮箱 *",
+      "subject": "主题 *",
+      "message": "留言 *",
+      "name_placeholder": "你的全名",
+      "email_placeholder": "your.email@example.com",
+      "subject_placeholder": "这是关于什么？",
+      "message_placeholder": "请告诉我你的项目或问题...",
+      "sending": "发送中...",
+      "send": "发送消息",
+      "success": "消息发送成功！",
+      "error": "发送失败，请重试。"
+    },
+    "cta_title": "准备开始你的项目了吗？",
+    "cta_desc": "让我们把你的想法变成现实。我很期待与你合作。",
+    "cta_button": "开始你的项目"
+  },
+  "footer": {
+    "brand": "作品集",
+    "tagline": "创造激发与吸引用户的数字体验。",
+    "quick_links": "快捷链接",
+    "copyright": "© {{year}} 作品集。由一位充满热情的开发者倾情打造。"
+  }
+}

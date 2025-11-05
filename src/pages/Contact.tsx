@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Instagram, Send, CheckC
 import emailjs from '@emailjs/browser';
 import contactData from '../data/contact.json';
 import { ContactFormData } from '../types';
+import { useTranslation } from 'react-i18next';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -14,6 +15,7 @@ const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [errors, setErrors] = useState<Partial<ContactFormData>>({});
+  const { t } = useTranslation();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -103,10 +105,10 @@ const Contact: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-              Let's Work Together
+              {t('contact.hero_title')}
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can bring your ideas to life.
+              {t('contact.hero_desc')}
             </p>
           </div>
         </div>
@@ -121,11 +123,10 @@ const Contact: React.FC = () => {
               <div className="space-y-8">
                 <div>
                   <h2 className="text-3xl font-bold text-gray-900 mb-6">
-                    Get in Touch
+                    {t('contact.title')}
                   </h2>
                   <p className="text-gray-600 mb-8">
-                    I'm always excited to work on new projects and collaborate with talented individuals. 
-                    Whether you have a specific project in mind or just want to discuss ideas, feel free to reach out.
+                    {t('contact.desc')}
                   </p>
                 </div>
 
@@ -136,7 +137,7 @@ const Contact: React.FC = () => {
                       <Mail className="h-6 w-6 text-primary-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Email</h3>
+                      <h3 className="font-semibold text-gray-900">{t('contact.email')}</h3>
                       <a 
                         href={`mailto:${contactData.email}`}
                         className="text-gray-600 hover:text-primary-600 transition-colors"
@@ -151,7 +152,7 @@ const Contact: React.FC = () => {
                       <Phone className="h-6 w-6 text-primary-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Phone</h3>
+                      <h3 className="font-semibold text-gray-900">{t('contact.phone')}</h3>
                       <a 
                         href={`tel:${contactData.phone}`}
                         className="text-gray-600 hover:text-primary-600 transition-colors"
@@ -166,7 +167,7 @@ const Contact: React.FC = () => {
                       <MapPin className="h-6 w-6 text-primary-600" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900">Location</h3>
+                      <h3 className="font-semibold text-gray-900">{t('contact.location')}</h3>
                       <p className="text-gray-600">{contactData.location}</p>
                     </div>
                   </div>
@@ -174,7 +175,7 @@ const Contact: React.FC = () => {
 
                 {/* Social Links */}
                 <div className="pt-6 border-t border-gray-200">
-                  <h3 className="font-semibold text-gray-900 mb-4">Follow Me</h3>
+                  <h3 className="font-semibold text-gray-900 mb-4">{t('contact.follow')}</h3>
                   <div className="flex space-x-4">
                     <a
                       href={contactData.social.github}
@@ -213,7 +214,7 @@ const Contact: React.FC = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                      Name *
+                      {t('contact.form.name')}
                     </label>
                     <input
                       type="text"
@@ -224,7 +225,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.name ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="Your full name"
+                      placeholder={t('contact.form.name_placeholder')}
                     />
                     {errors.name && (
                       <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -233,7 +234,7 @@ const Contact: React.FC = () => {
 
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email *
+                      {t('contact.form.email')}
                     </label>
                     <input
                       type="email"
@@ -244,7 +245,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.email ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="your.email@example.com"
+                      placeholder={t('contact.form.email_placeholder')}
                     />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-600">{errors.email}</p>
@@ -253,7 +254,7 @@ const Contact: React.FC = () => {
 
                   <div>
                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject *
+                      {t('contact.form.subject')}
                     </label>
                     <input
                       type="text"
@@ -264,7 +265,7 @@ const Contact: React.FC = () => {
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.subject ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="What's this about?"
+                      placeholder={t('contact.form.subject_placeholder')}
                     />
                     {errors.subject && (
                       <p className="mt-1 text-sm text-red-600">{errors.subject}</p>
@@ -273,83 +274,50 @@ const Contact: React.FC = () => {
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                      Message *
+                      {t('contact.form.message')}
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      rows={5}
                       value={formData.message}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none ${
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors ${
                         errors.message ? 'border-red-500' : 'border-gray-300'
                       }`}
-                      placeholder="Tell me about your project or question..."
+                      rows={6}
+                      placeholder={t('contact.form.message_placeholder')}
                     />
                     {errors.message && (
                       <p className="mt-1 text-sm text-red-600">{errors.message}</p>
                     )}
                   </div>
 
-                  {/* Status Messages */}
-                  {submitStatus === 'success' && (
-                    <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-                      <p className="text-green-800">
-                        Thank you for your message! I'll get back to you within 24 hours.
-                      </p>
-                    </div>
-                  )}
-
-                  {submitStatus === 'error' && (
-                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center">
-                      <AlertCircle className="h-5 w-5 text-red-600 mr-2" />
-                      <p className="text-red-800">
-                        Sorry, there was an error sending your message. Please try again or contact me directly.
-                      </p>
-                    </div>
-                  )}
-
                   <button
                     type="submit"
+                    className="inline-flex items-center px-6 py-3 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors"
                     disabled={isSubmitting}
-                    className="w-full bg-primary-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-primary-700 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center"
                   >
-                    {isSubmitting ? (
-                      <>
-                        <Loader className="animate-spin h-5 w-5 mr-2" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-5 w-5 mr-2" />
-                        Send Message
-                      </>
-                    )}
+                    <Send className="mr-2 h-5 w-5" />
+                    {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
                   </button>
+
+                  {/* Success/Error Messages */}
+                  {submitStatus === 'success' && (
+                    <div className="mt-4 flex items-center text-green-600">
+                      <CheckCircle className="mr-2 h-5 w-5" />
+                      <span>Message sent successfully!</span>
+                    </div>
+                  )}
+                  {submitStatus === 'error' && (
+                    <div className="mt-4 flex items-center text-red-600">
+                      <AlertCircle className="mr-2 h-5 w-5" />
+                      <span>Failed to send message. Please try again.</span>
+                    </div>
+                  )}
                 </form>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-16 bg-primary-600">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Your Project?
-          </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Let's turn your ideas into reality. I'm excited to work with you on your next project.
-          </p>
-          <a
-            href={`mailto:${contactData.email}?subject=New Project Inquiry`}
-            className="inline-flex items-center bg-white text-primary-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
-          >
-            <Mail className="h-5 w-5 mr-2" />
-            Start Your Project
-          </a>
         </div>
       </section>
     </div>

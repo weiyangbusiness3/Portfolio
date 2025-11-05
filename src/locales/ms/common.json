@@ -1,0 +1,75 @@
+{
+  "brand": "Portfolio",
+  "nav": {
+    "home": "Laman Utama",
+    "projects": "Projek",
+    "contact": "Hubungi"
+  },
+  "home": {
+    "hero_title": "Hai, saya {{name}}",
+    "view_work": "Lihat Hasil Kerja Saya",
+    "download_resume": "Muat Turun Resume",
+    "about_me": "Tentang Saya",
+    "my_journey": "Perjalanan Saya",
+    "skills": {
+      "frontend": "Pembangunan Frontend",
+      "uiux": "Reka Bentuk UI/UX",
+      "backend": "Integrasi Backend"
+    },
+    "typing": ["Pembangun Full Stack", "Penyelesai Masalah"],
+    "intro": "Saya membina aplikasi web yang cantik dan responsif menggunakan teknologi moden. Saya mementingkan kod yang bersih, pengalaman pengguna yang hebat, dan menjadikan idea sebagai realiti digital."
+  },
+  "projects": {
+    "title": "Projek Saya",
+    "subtitle": "Terokai hasil kerja terkini saya dan lihat bagaimana saya merealisasikan idea melalui kod dan reka bentuk.",
+    "search_placeholder": "Cari projek...",
+    "filter_all": "Semua",
+    "results_count": "Menunjukkan {{count}} daripada {{total}} projek",
+    "no_results_title": "Tiada projek ditemui",
+    "no_results_desc": "Cuba ubah istilah carian atau kriteria penapis.",
+    "view_details": "Lihat Perincian",
+    "cta_title": "Ada idea projek?",
+    "cta_desc": "Mari bekerjasama untuk merealisasikan idea anda. Saya sentiasa teruja untuk projek baharu yang mencabar.",
+    "cta_button": "Hubungi Saya"
+  },
+  "project_details": {
+    "not_found_title": "Projek Tidak Dijumpai",
+    "not_found_desc": "Projek yang anda cari tidak wujud.",
+    "back_to_projects": "Kembali ke Projek",
+    "live_demo": "Demo Langsung",
+    "view_live": "Lihat Laman Langsung",
+    "source_code": "Kod Sumber",
+    "view_github": "Lihat di GitHub"
+  },
+  "contact": {
+    "hero_title": "Mari Bekerjasama",
+    "hero_desc": "Ada projek dalam fikiran? Saya ingin mendengarnya. Hantarkan mesej dan mari bincang bagaimana kita boleh merealisasikan idea anda.",
+    "title": "Hubungi Saya",
+    "desc": "Saya sentiasa teruja untuk bekerjasama dalam projek baharu. Sama ada anda mempunyai projek khusus atau hanya ingin berbincang idea, jangan segan untuk menghubungi.",
+    "email": "Emel",
+    "phone": "Telefon",
+    "location": "Lokasi",
+    "follow": "Ikuti Saya",
+    "form": {
+      "name": "Nama *",
+      "email": "Emel *",
+      "subject": "Subjek *",
+      "message": "Mesej *",
+      "name_placeholder": "Nama penuh anda",
+      "email_placeholder": "your.email@example.com",
+      "subject_placeholder": "Tentang apa ini?",
+      "message_placeholder": "Ceritakan tentang projek atau soalan anda...",
+      "sending": "Menghantar...",
+      "send": "Hantar Mesej"
+    },
+    "cta_title": "Sedia mulakan projek anda?",
+    "cta_desc": "Mari jadikan idea anda satu kenyataan. Saya teruja untuk bekerjasama dengan anda.",
+    "cta_button": "Mulakan Projek Anda"
+  },
+  "footer": {
+    "brand": "Portfolio",
+    "tagline": "Mencipta pengalaman digital yang menginspirasikan dan menarik pengguna.",
+    "quick_links": "Pautan Pantas",
+    "copyright": "© {{year}} Portfolio. Dibuat dengan ❤️ oleh pembangun yang bersemangat."
+  }
+}

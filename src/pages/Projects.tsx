@@ -3,29 +3,29 @@ import { Link } from 'react-router-dom';
 import { Search, Filter, ExternalLink, Github, Calendar, Clock, ArrowRight, ArrowRight as ArrowRightIcon } from 'lucide-react';
 import { Project } from '../types';
 import projectsData from '../data/projects.json';
+import { useTranslation } from 'react-i18next'
 
 const Projects: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const { t } = useTranslation();
 
   const projects: Project[] = projectsData;
 
   const categories = useMemo(() => {
-    const cats = ['All', ...new Set(projects.map(p => p.category))];
+    const cats = [t('projects.filter_all'), ...new Set(projects.map(p => p.category))];
     return cats;
-  }, [projects]);
+  }, [projects, t]);
 
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
       const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
-      
-      const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
-      
+      const matchesCategory = selectedCategory === t('projects.filter_all') || project.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [projects, searchTerm, selectedCategory]);
+  }, [projects, searchTerm, selectedCategory, t]);
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">
@@ -34,10 +34,10 @@ const Projects: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-              My Projects
+              {t('projects.title')}
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Explore my latest work and see how I bring ideas to life through code and design.
+              {t('projects.subtitle')}
             </p>
           </div>
 
@@ -48,7 +48,7 @@ const Projects: React.FC = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
               <input
                 type="text"
-                placeholder="Search projects..."
+                placeholder={t('projects.search_placeholder')}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
@@ -74,7 +74,7 @@ const Projects: React.FC = () => {
 
           {/* Results count */}
           <div className="text-center text-gray-600 mb-8">
-            Showing {filteredProjects.length} of {projects.length} projects
+            {t('projects.results_count', { count: filteredProjects.length, total: projects.length })}
           </div>
         </div>
       </section>
@@ -88,10 +88,10 @@ const Projects: React.FC = () => {
                 <Search className="h-16 w-16 mx-auto" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                No projects found
+                {t('projects.no_results_title')}
               </h3>
               <p className="text-gray-600">
-                Try adjusting your search terms or filter criteria.
+                {t('projects.no_results_desc')}
               </p>
             </div>
           ) : (
@@ -156,7 +156,7 @@ const Projects: React.FC = () => {
                         to={`/projects/${project.id}`}
                         className="flex-1 bg-primary-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors duration-200 flex items-center justify-center"
                       >
-                        View Details
+                        {t('projects.view_details')}
                       </Link>
                       <a
                         href={project.github}
@@ -188,17 +188,17 @@ const Projects: React.FC = () => {
       {/* Call to Action */}
       <section className="py-16 bg-primary-600">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Have a project in mind?
+          <h2 className="text-3px font-bold text-white mb-4">
+            {t('projects.cta_title')}
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Let's work together to bring your ideas to life. I'm always excited to work on new and challenging projects.
+            {t('projects.cta_desc')}
           </p>
           <Link
             to="/contact"
             className="inline-flex items-center px-8 py-3 bg-white text-primary-600 font-medium rounded-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg"
           >
-            Get In Touch
+            {t('projects.cta_button')}
             <ArrowRightIcon className="ml-2 h-5 w-5" />
           </Link>
         </div>

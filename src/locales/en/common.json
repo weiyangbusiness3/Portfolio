@@ -1,0 +1,92 @@
+{
+  "brand": "Portfolio",
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero_title": "Hi, I'm {{name}}",
+    "view_work": "View My Work",
+    "download_resume": "Download Resume",
+    "about_me": "About Me",
+    "my_journey": "My Journey",
+    "skills": {
+      "frontend": "Frontend Development",
+      "uiux": "UI/UX Design",
+      "backend": "Backend Integration"
+    },
+    "typing": ["Full Stack Developer", "Problem Solver"],
+    "intro": "I create beautiful, responsive web applications with modern technologies. Passionate about clean code, user experience, and turning ideas into digital reality."
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Explore my latest work and see how I bring ideas to life through code and design.",
+    "search_placeholder": "Search projects...",
+    "filter_all": "All",
+    "results_count": "Showing {{count}} of {{total}} projects",
+    "no_results_title": "No projects found",
+    "no_results_desc": "Try adjusting your search terms or filter criteria.",
+    "view_details": "View Details",
+    "cta_title": "Have a project in mind?",
+    "cta_desc": "Let's work together to bring your ideas to life. I'm always excited to work on new and challenging projects.",
+    "cta_button": "Get In Touch",
+    "more_tech": "+{{count}} more"
+  },
+  "project_details": {
+    "not_found_title": "Project Not Found",
+    "not_found_desc": "The project you're looking for doesn't exist.",
+    "back_to_projects": "Back to Projects",
+    "live_demo": "Live Demo",
+    "view_live": "View Live Site",
+    "source_code": "Source Code",
+    "view_github": "View on GitHub",
+    "gallery_title": "Project Gallery",
+    "overview_title": "Project Overview",
+    "key_features": "Key Features",
+    "feature_1": "Modern, responsive design with mobile-first approach",
+    "feature_2": "Optimized performance and user experience",
+    "feature_3": "Scalable architecture and clean code practices",
+    "technologies_used": "Technologies Used",
+    "information_title": "Project Information",
+    "duration": "Duration",
+    "category": "Category"
+  },
+  "shared": {
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "contact": {
+    "hero_title": "Let's Work Together",
+    "hero_desc": "Have a project in mind? I'd love to hear about it. Send me a message and let's discuss how we can bring your ideas to life.",
+    "title": "Get in Touch",
+    "desc": "I'm always excited to work on new projects and collaborate with talented individuals. Whether you have a specific project in mind or just want to discuss ideas, feel free to reach out.",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "follow": "Follow Me",
+    "form": {
+      "name": "Name *",
+      "email": "Email *",
+      "subject": "Subject *",
+      "message": "Message *",
+      "name_placeholder": "Your full name",
+      "email_placeholder": "your.email@example.com",
+      "subject_placeholder": "What's this about?",
+      "message_placeholder": "Tell me about your project or question...",
+      "sending": "Sending...",
+      "send": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    },
+    "cta_title": "Ready to Start Your Project?",
+    "cta_desc": "Let's turn your ideas into reality. I'm excited to work with you on your next project.",
+    "cta_button": "Start Your Project"
+  },
+  "footer": {
+    "brand": "Portfolio",
+    "tagline": "Creating digital experiences that inspire and engage users.",
+    "quick_links": "Quick Links",
+    "copyright": "© {{year}} Portfolio. Made with ❤️ by a passionate developer."
+  }
+}

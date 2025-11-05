@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Download, Github, Instagram, Linkedin, Mail, Twitter } from 'lucide-react';
 import contactData from '../data/contact.json';
+import { useTranslation } from 'react-i18next'
 
 const Home: React.FC = () => {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const { t } = useTranslation();
 
-  const words = ['Full Stack Developer', 'Problem Solver'];
+  const words = t('home.typing', { returnObjects: true }) as string[];
 
   useEffect(() => {
     const handleType = () => {
@@ -34,7 +36,7 @@ const Home: React.FC = () => {
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, loopNum, typingSpeed]);
+  }, [currentText, isDeleting, loopNum, typingSpeed, words]);
 
   return (
     <div className="min-h-screen">
@@ -44,8 +46,7 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <div className="animate-fade-in">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Hi, I'm{' '}
-              <span className="text-primary-600">Wei Yang</span>
+              {t('home.hero_title', { name: 'Wei Yang' })}
             </h1>
             <div className="text-xl sm:text-2xl lg:text-3xl text-gray-700 mb-8 h-8">
               <span className="typing-animation inline-block">
@@ -54,15 +55,14 @@ const Home: React.FC = () => {
               </span>
             </div>
             <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              I create beautiful, responsive web applications with modern technologies.
-              Passionate about clean code, user experience, and turning ideas into digital reality.
+              {t('home.intro')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <Link
                 to="/projects"
                 className="inline-flex items-center px-8 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
               >
-                View My Work
+                {t('home.view_work')}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <a
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
                 className="inline-flex items-center px-8 py-3 border-2 border-primary-600 text-primary-600 font-medium rounded-lg hover:bg-primary-600 hover:text-white transition-all duration-200"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Download Resume
+                {t('home.download_resume')}
               </a>
             </div>
 
@@ -111,30 +111,29 @@ const Home: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">
-              About Me
+              {t('home.about_me')}
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="animate-slide-up">
                 <div className="bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl p-8 shadow-lg">
                   <h3 className="text-2xl font-semibold text-primary-900 mb-4">
-                    My Journey
+                    {t('home.my_journey')}
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-6">
-                    With over 3 years of experience in web development, I specialize in creating
-                    modern, responsive applications that deliver exceptional user experiences.
+                    {t('home.intro')}
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-center text-gray-700">
                       <div className="w-2 h-2 bg-primary-500 rounded-full mr-3"></div>
-                      <span>Frontend Development</span>
+                      <span>{t('home.skills.frontend')}</span>
                     </div>
                     <div className="flex items-center text-gray-700">
                       <div className="w-2 h-2 bg-primary-500 rounded-full mr-3"></div>
-                      <span>UI/UX Design</span>
+                      <span>{t('home.skills.uiux')}</span>
                     </div>
                     <div className="flex items-center text-gray-700">
                       <div className="w-2 h-2 bg-primary-500 rounded-full mr-3"></div>
-                      <span>Backend Integration</span>
+                      <span>{t('home.skills.backend')}</span>
                     </div>
                   </div>
                 </div>

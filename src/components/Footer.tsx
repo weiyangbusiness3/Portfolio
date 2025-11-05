@@ -1,9 +1,11 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Instagram, Mail, Heart } from 'lucide-react';
 import contactData from '../data/contact.json';
+import { useTranslation } from 'react-i18next';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -11,9 +13,9 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Portfolio</h3>
+            <h3 className="text-xl font-bold mb-4">{t('footer.brand')}</h3>
             <p className="text-gray-400 mb-4">
-              Creating digital experiences that inspire and engage users.
+              {t('footer.tagline')}
             </p>
             <div className="flex space-x-4">
               <a
@@ -49,21 +51,21 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('footer.quick_links')}</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                  Home
+                  {t('nav.home')}
                 </a>
               </li>
               <li>
                 <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
-                  Projects
+                  {t('nav.projects')}
                 </a>
               </li>
               <li>
                 <a href="#contact" className="text-gray-400 hover:text-white transition-colors">
-                  Contact
+                  {t('nav.contact')}
                 </a>
               </li>
             </ul>
@@ -71,7 +73,7 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
+            <h4 className="text-lg font-semibold mb-4">{t('contact.title')}</h4>
             <div className="space-y-2">
               <a
                 href={`mailto:${contactData.email}`}
@@ -86,8 +88,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {currentYear} Portfolio. Made with{' '}
-            <Heart className="inline h-4 w-4 text-red-500" /> by a passionate developer.
+            {t('footer.copyright', { year: currentYear })}
           </p>
         </div>
       </div>
