@@ -7,22 +7,24 @@ import { useTranslation } from 'react-i18next'
 
 const Projects: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const { t } = useTranslation();
+  // Use a language-independent sentinel for the "All" filter to avoid i18n mismatch
+  const CATEGORY_ALL = '__ALL__';
+  const [selectedCategory, setSelectedCategory] = useState(CATEGORY_ALL);
+  const { t, i18n } = useTranslation();
 
   const projects: Project[] = projectsData;
 
   const categories = useMemo(() => {
-    const cats = [t('projects.filter_all'), ...new Set(projects.map(p => p.category))];
-    return cats;
-  }, [projects, t]);
+    // Build categories using stable values; label will be translated at render time
+    return [CATEGORY_ALL, ...new Set(projects.map(p => p.category))];
+  }, [projects]);
 
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
       const matchesSearch = project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            project.technologies.some(tech => tech.toLowerCase().includes(searchTerm.toLowerCase()));
-      const matchesCategory = selectedCategory === t('projects.filter_all') || project.category === selectedCategory;
+      const matchesCategory = selectedCategory === CATEGORY_ALL || project.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
   }, [projects, searchTerm, selectedCategory, t]);
@@ -65,7 +67,7 @@ const Projects: React.FC = () => {
               >
                 {categories.map((category) => (
                   <option key={category} value={category}>
-                    {category}
+                    {category === CATEGORY_ALL ? t('projects.filter_all') : category}
                   </option>
                 ))}
               </select>
@@ -102,11 +104,11 @@ const Projects: React.FC = () => {
                   className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
                 >
                   {/* Project Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-72 md:h-80 overflow-hidden bg-gray-100">
                     <img
                       src={project.thumbnail}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      alt={project.title_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 right-4">
@@ -119,10 +121,10 @@ const Projects: React.FC = () => {
                   {/* Project Content */}
                   <div className="p-6">
                     <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
-                      {project.title}
+                      {project.title_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.title}
                     </h3>
                     <p className="text-gray-600 mb-4 line-clamp-3">
-                      {project.description}
+                      {project.description_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.description}
                     </p>
 
                     {/* Technologies */}

@@ -1,7 +1,17 @@
 export interface Project {
   id: number;
   title: string;
+  title_i18n?: {
+    en?: string;
+    zh?: string;
+    ms?: string;
+  };
   description: string;
+  description_i18n?: {
+    en?: string;
+    zh?: string;
+    ms?: string;
+  };
   thumbnail: string;
   images: string[];
   category: string;

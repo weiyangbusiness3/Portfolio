@@ -1,50 +1,128 @@
 [
   {
     "id": 1,
-    "title": "E-commerce Platform",
-    "description": "A full-stack e-commerce solution with modern UI/UX design, secure payment integration, and comprehensive admin dashboard for managing products and orders.",
-    "thumbnail": "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Modern%20e-commerce%20website%20interface%20with%20product%20grid%2C%20shopping%20cart%2C%20and%20clean%20design&image_size=landscape_16_9",
+    "title": "Tower Defence",
+    "title_i18n": {
+      "en": "Tower Defence",
+      "zh": "塔防",
+      "ms": "Pertahanan Menara"
+    },
+    "description": "A browser-based tower defence game featuring strategic gameplay, multiple levels, upgradeable towers, and responsive UI.",
+    "description_i18n": {
+      "en": "A browser-based tower defence game featuring strategic gameplay, multiple levels, upgradeable towers, and responsive UI.",
+      "zh": "一款基于浏览器的塔防游戏，包含策略玩法、多关卡、可升级防御塔及响应式界面。",
+      "ms": "Permainan pertahanan menara berasaskan pelayar dengan strategi, berbilang tahap, menara boleh dinaik taraf, dan UI responsif."
+    },
+    "thumbnail": "/project/Tower-Defence/1.jpg",
     "images": [
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=E-commerce%20homepage%20with%20hero%20banner%2C%20featured%20products%2C%20and%20modern%20design&image_size=landscape_16_9",
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Product%20detail%20page%20with%20image%20gallery%2C%20description%2C%20and%20add%20to%20cart%20button&image_size=landscape_16_9",
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Shopping%20cart%20interface%20with%20product%20items%2C%20quantity%20controls%2C%20and%20checkout%20button&image_size=landscape_16_9"
+      "/project/Tower-Defence/1.jpg",
+      "/project/Tower-Defence/2.jpg",
+      "/project/Tower-Defence/3.jpg",
+      "/project/Tower-Defence/4.jpg",
+      "/project/Tower-Defence/5.jpg",
+      "/project/Tower-Defence/6.jpg",
+      "/project/Tower-Defence/7.jpg"
     ],
-    "category": "Web Development",
-    "technologies": ["React", "Node.js", "MongoDB", "Stripe", "Express.js"],
-    "duration": "3 months",
-    "link": "https://example-ecommerce.com",
-    "github": "https://github.com/username/ecommerce-platform"
+    "category": "Game Development",
+    "technologies": [
+      "TypeScript",
+      "Expo",
+      "React"
+    ],
+    "duration": "1 week",
+    "link": "",
+    "github": "https://github.com/weiyangbusiness3/Tower-Defence"
   },
   {
     "id": 2,
-    "title": "Task Management App",
-    "description": "A collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface for organizing workflows.",
-    "thumbnail": "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Task%20management%20dashboard%20with%20Kanban%20board%2C%20task%20cards%2C%20and%20team%20collaboration%20interface&image_size=landscape_16_9",
+    "title": "Image Generator",
+    "title_i18n": {
+      "en": "Image Generator",
+      "zh": "图像生成器",
+      "ms": "Penjana Imej"
+    },
+    "description": "An image generator app with prompt-based rendering, gallery preview, and downloadable outputs.",
+    "description_i18n": {
+      "en": "An image generator app with prompt-based rendering, gallery preview, and downloadable outputs.",
+      "zh": "一款基于提示生成图像的应用，支持图库预览与下载。",
+      "ms": "Aplikasi penjana imej berasaskan arahan dengan pratonton galeri dan muat turun."
+    },
+    "thumbnail": "/project/Image-Generator/WhatsApp 图像2025-11-05于15.52.30_9b96deea.jpg",
     "images": [
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Kanban%20board%20interface%20with%20drag%20and%20drop%20task%20cards%2C%20columns%20for%20different%20statuses&image_size=landscape_16_9",
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Task%20detail%20modal%20with%20description%2C%20assignees%2C%20due%20date%2C%20and%20comments&image_size=landscape_16_9",
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Team%20dashboard%20showing%20project%20progress%2C%20member%20activity%2C%20and%20task%20statistics&image_size=landscape_16_9"
+      "/project/Image-Generator/WhatsApp 图像2025-11-05于15.52.30_9b96deea.jpg",
+      "/project/Image-Generator/WhatsApp 图像2025-11-05于15.53.29_c6af1ff0.jpg",
+      "/project/Image-Generator/WhatsApp 图像2025-11-05于15.53.40_d22b01ff.jpg"
     ],
     "category": "Web Application",
-    "technologies": ["Vue.js", "Firebase", "Vuex", "Socket.io"],
-    "duration": "2 months",
-    "link": "https://example-tasks.com",
-    "github": "https://github.com/username/task-manager"
+    "technologies": [
+      "TypeScript",
+      "React",
+      "Tailwind CSS"
+    ],
+    "duration": "1 weeks",
+    "link": "",
+    "github": "https://github.com/weiyangbusiness3/Image-Generator"
   },
   {
     "id": 3,
-    "title": "Weather Dashboard",
-    "description": "An interactive weather dashboard with real-time weather data, location-based forecasts, and beautiful data visualizations for weather patterns and trends.",
-    "thumbnail": "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Weather%20dashboard%20with%20current%20conditions%2C%20forecast%20charts%2C%20and%20location%20search&image_size=landscape_16_9",
+    "title": "Godot Game",
+    "title_i18n": {
+      "en": "Godot Game",
+      "zh": "Godot 游戏",
+      "ms": "Permainan Godot"
+    },
+    "description": "A game developed using the Godot Engine with showcase images.",
+    "description_i18n": {
+      "en": "A game developed using the Godot Engine with showcase images.",
+      "zh": "使用 Godot 引擎开发的游戏，展示核心玩法与画面。",
+      "ms": "Permainan dibangunkan dengan enjin Godot yang memaparkan permainan dan visual."
+    },
+    "thumbnail": "/project/Godot-Game/image.png",
     "images": [
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Interactive%20weather%20map%20with%20temperature%20overlays%2C%20wind%20patterns%2C%20and%20precipitation%20data&image_size=landscape_16_9",
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Weather%20forecast%20charts%20showing%20temperature%20trends%2C%20humidity%20levels%2C%20and%20precipitation%20chances&image_size=landscape_16_9",
-      "https://trae-api-sg.mchost.guru/api/ide/v1/text_to_image?prompt=Mobile%20weather%20app%20interface%20with%20clean%20design%2C%20hourly%20forecast%2C%20and%20weather%20alerts&image_size=portrait_16_9"
+      "/project/Godot-Game/image.png"
     ],
-    "category": "Data Visualization",
-    "technologies": ["React", "D3.js", "OpenWeather API", "Chart.js"],
-    "duration": "1 month",
-    "link": "https://example-weather.com",
-    "github": "https://github.com/username/weather-dashboard"
+    "category": "Game Development",
+    "technologies": [
+      "Godot",
+      "GDScript"
+    ],
+    "duration": "2 day",
+    "link": "",
+    "github": "https://github.com/weiyangbusiness3/Godot-Basic-Game"
+  },
+  {
+    "id": 4,
+    "title": "AI Car",
+    "title_i18n": {
+      "en": "AI Car",
+      "zh": "AI 小车",
+      "ms": "Kereta AI"
+    },
+    "description": "An AI-driven car project featuring vision-based tracking and autonomous navigation.",
+    "description_i18n": {
+      "en": "An AI-driven car project featuring vision-based tracking and autonomous navigation.",
+      "zh": "一个基于 AI 的智能小车项目，支持视觉跟踪与自主导航。",
+      "ms": "Projek kereta AI dengan penjejakan berasaskan visi dan navigasi autonomi."
+    },
+    "thumbnail": "/project/AI-Car/WhatsApp 图像2025-11-05于16.03.29_01f17094.jpg",
+    "images": [
+      "/project/AI-Car/WhatsApp 图像2025-11-05于16.03.29_01f17094.jpg",
+      "/project/AI-Car/WhatsApp 图像2025-11-05于16.03.40_24171044.jpg",
+      "/project/AI-Car/WhatsApp 图像2025-11-05于16.04.16_0fa79a8f.jpg",
+      "/project/AI-Car/WhatsApp 图像2025-11-05于16.04.30_607a51ce.jpg",
+      "/project/AI-Car/WhatsApp 图像2025-11-05于16.04.44_72f15eba.jpg",
+      "/project/AI-Car/屏幕截图 2025-11-05 161331.png",
+      "/project/AI-Car/屏幕截图 2025-11-05 161352.png",
+      "/project/AI-Car/屏幕截图 2025-11-05 161425.png"
+    ],
+    "category": "AI/Robotics",
+    "technologies": [
+      "Python",
+      "OpenCV",
+      "TensorFlow"
+    ],
+    "duration": "3 weeks",
+    "link": "",
+    "github": "https://github.com/weiyangbusiness3/aicar-fullstack"
   }
 ]

@@ -9,7 +9,7 @@ const ProjectDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const project: Project | undefined = projectsData.find(p => p.id === parseInt(id || ''));
 
@@ -95,10 +95,10 @@ const ProjectDetails: React.FC = () => {
                 {project.category}
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-                {project.title}
+                {project.title_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.title}
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                {project.description}
+                {project.description_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.description}
               </p>
             </div>
           </div>
@@ -121,8 +121,8 @@ const ProjectDetails: React.FC = () => {
               >
                 <img
                   src={project.images[currentImageIndex]}
-                  alt={`${project.title} - Image ${currentImageIndex + 1}`}
-                  className="w-full h-96 object-cover"
+                  alt={`${(project.title_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.title)} - Image ${currentImageIndex + 1}`}
+                  className="w-full h-[28rem] md:h-[34rem] object-contain bg-gray-100"
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <Eye className="h-12 w-12 text-white" />
@@ -144,8 +144,8 @@ const ProjectDetails: React.FC = () => {
                 >
                   <img
                     src={image}
-                    alt={`${project.title} - Thumbnail ${index + 1}`}
-                    className="w-full h-24 object-cover"
+                    alt={`${(project.title_i18n?.[i18n.language as 'en' | 'zh' | 'ms'] ?? project.title)} - Thumbnail ${index + 1}`}
+                    className="w-full h-28 object-contain bg-gray-100"
                   />
                 </div>
               ))}
@@ -275,7 +275,7 @@ const ProjectDetails: React.FC = () => {
               <X className="h-6 w-6" />
             </button>
             <div className="relative bg-white rounded-2xl overflow-hidden">
-              <img src={project.images[currentImageIndex]} alt={`${project.title} - Image ${currentImageIndex + 1}`} className="w-full h-[60vh] object-cover" />
+              <img src={project.images[currentImageIndex]} alt={`${project.title} - Image ${currentImageIndex + 1}`} className="w-full h-[80vh] object-contain bg-white" />
               <div className="absolute inset-0 flex items-center justify-between px-4">
                 <button
                   className="bg-white/80 hover:bg-white text-gray-800 rounded-full p-2 shadow"
