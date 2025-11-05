@@ -1,0 +1,15 @@
+{
+  "email": "weiyangbusiness3@gmail.com",
+  "phone": "+60129699843",
+  "location": "Shah Alam, Malaysia",
+  "social": {
+    "github": "https://github.com/weiyangbusiness3",
+    "linkedin": "https://www.linkedin.com/in/ong-wei-yang-2423b8294",
+    "instagram": "https://instagram.com/notweiyang"
+  },
+  "emailjs": {
+    "serviceId": "your_service_id",
+    "templateId": "your_template_id",
+    "publicKey": "your_public_key"
+  }
+}
